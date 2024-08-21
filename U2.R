@@ -2398,7 +2398,7 @@ response_var_five_six <- c("Amoxicillin", "Chlorothalonil", "Diflufenican", "Gly
 for (var in response_var_five_six) {
   actual_value_five_six <- as.factor(Val_set_Chem_six[[var]])
   prediction_five_six <- Predictions_Val_Chem_six$classOutput[[var]]$predicted[,2]
-  roc_curve <- roc(actual_value_five_six, prediction_five_six)
+  roc_curve <- roc(actual_value_five_six, prediction_five_six, direction = "<")
   auc_value <- auc(roc_curve)
   auc_values_five_six[[var]] <- auc_value
   print(paste("AUC for", var, "is", auc_value))
@@ -2484,7 +2484,7 @@ response_var_five_seven <- c("Amoxicillin", "Chlorothalonil", "Diflufenican", "G
 for (var in response_var_five_seven) {
   actual_value_five_seven <- as.factor(Val_set_Chem_seven[[var]])
   prediction_five_seven <- Predictions_Val_Chem_seven$classOutput[[var]]$predicted[,2]
-  roc_curve <- roc(actual_value_five_seven, prediction_five_seven)
+  roc_curve <- roc(actual_value_five_seven, prediction_five_seven, direction = "<")
   auc_value <- auc(roc_curve)
   auc_values_five_seven[[var]] <- auc_value
   print(paste("AUC for", var, "is", auc_value))
